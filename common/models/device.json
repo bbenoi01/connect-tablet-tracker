@@ -1,0 +1,22 @@
+{
+  "name": "device",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "OS": {
+      "type": "string",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
