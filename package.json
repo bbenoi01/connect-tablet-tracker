@@ -6,7 +6,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "build": "npm run less && webpack -w",
+    "build": "npm run less && webpack",
     "less": "lessc common/src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "start": "npm run build && node .",
@@ -29,7 +29,6 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^4.0.0",
     "loopback-connector-mongodb": "^1.18.1",
-    "moment": "^2.22.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
