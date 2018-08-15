@@ -7,6 +7,14 @@ const INITIAL_STATE = {
 
 export default function CheckoutReducer(state = INITIAL_STATE, action) {
     const { type, payload } = action;
+
+    var timestamp = Date.now();
+    var nd = new Date(timestamp);
+    var month = nd.getMonth() + 1;
+    var day = nd.getDate();
+    var year = nd.getFullYear();
+    var date = month + '/' + day + '/' + year;
+
     switch (type) {
         case (types.UPDATE_WHO): {
             return {
@@ -18,14 +26,16 @@ export default function CheckoutReducer(state = INITIAL_STATE, action) {
         case (types.UPDATE_WHAT): {
             return {
                 ...state,
-                device: payload
+                device: payload,
+                date: date
             }
         }
 
         case (types.ADD_HISTORY_ITEM): {
             return {
                 ...state,
-                historyItem: payload
+                name: payload.name,
+                device: payload.device
             }
         }
         default: return state;

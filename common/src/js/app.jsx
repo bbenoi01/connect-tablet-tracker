@@ -7,7 +7,7 @@ import {
 } from './actions/appActions';
 import Admin from './indexes/adminIndex';
 import Checkout from './indexes/checkoutIndex';
-import History from './indexes/historyIndex';
+// import History from './indexes/historyIndex';
 
 export default class App extends Component {
 
@@ -24,7 +24,7 @@ export default class App extends Component {
             <Router>
                 <div>
                     <Route exact path='/' component={Checkout}/>
-                    <Route exact path='/history' component={History}/>
+                    {/* <Route exact path='/history' component={History}/> */}
                     <Route exact path='/admin' component={Admin}/>
                 </div>
             </Router>
