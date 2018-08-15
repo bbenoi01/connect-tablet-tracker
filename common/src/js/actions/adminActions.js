@@ -87,7 +87,7 @@ export function updateModel(value) {
 
 export function addDevice(OS, model) {
     return (dispatch) => {
-        axios.post('https://connect-tablet-tracker.herokuapp.com/api/devices', { OS, model })
+        axios.post('http://localhost:3000/api/devices', { OS, model })
         .then(res => {
             dispatch(findDevices())
         })
@@ -97,7 +97,7 @@ export function addDevice(OS, model) {
 
 export function removeDevice(id) {
     return (dispatch) => {
-        axios.delete(`https://connect-tablet-tracker.herokuapp.com/api/devices/${id}`)
+        axios.delete(`http://localhost:3000/api/devices/${id}`)
         .then(res => {
             dispatch(findDevices())
         })
