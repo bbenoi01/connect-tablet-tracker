@@ -13,7 +13,7 @@ export const types = {
 
 export function findEmployees() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/employees')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/employees')
         .then(res => {
             dispatch({
                 type: types.ALL_EMPLOYEES,
@@ -40,7 +40,7 @@ export function updateLastName(value) {
 
 export function addEmployee(firstName, lastName) {
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/employees', { firstName, lastName })
+        axios.post('https://connect-tablet-tracker.herokuapp.com/api/employees', { firstName, lastName })
         .then(res => {
             dispatch(findEmployees())
         })
@@ -50,7 +50,7 @@ export function addEmployee(firstName, lastName) {
 
 export function removeEmployee(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:3000/api/employees/${id}`)
+        axios.delete(`https://connect-tablet-tracker.herokuapp.com/api/employees/${id}`)
         .then(res => {
             dispatch(findEmployees())
         })
@@ -60,7 +60,7 @@ export function removeEmployee(id) {
 
 export function findDevices() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/devices')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
         .then(res => {
             dispatch({
                 type: types.ALL_DEVICES,
