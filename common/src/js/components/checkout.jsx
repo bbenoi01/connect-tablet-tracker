@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navbar from '../indexes/navbarIndex';
-import moment from 'moment';
 import {
     updateDeviceSelect,
     updateEmployeeSelect,
