@@ -10,9 +10,9 @@ export default class Navbar extends Component {
                         <li className="nav-item">
                             <a className="nav-link" href="/">Checkout</a>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="#/history">History</a>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <a className="nav-link" href="#/admin">Admin</a>
                         </li>

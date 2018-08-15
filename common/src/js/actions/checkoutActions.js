@@ -33,9 +33,9 @@ export function updateDeviceSelect(value) {
     };
 }
 
-export function addNewHistoryItem(name, device) {
+export function addNewHistoryItem(name, device, date) {
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/historyItems', { name, device })
+        axios.post('http://localhost:3000/api/historyItems', { name, device, date })
         .then(res => {
             dispatch(findHistoryItems())
         })

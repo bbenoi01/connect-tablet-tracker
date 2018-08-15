@@ -31,10 +31,8 @@ export default class Checkout extends Component {
     }
 
     handleClick(e) {
-        const { dispatch, name, device } = this.props;
-        // e.preventDefault();
-        dispatch(addNewHistoryItem(name, device));
-        // dispatch(findHistoryItems());
+        const { dispatch, name, device, date } = this.props;
+        dispatch(addNewHistoryItem(name, device, date));
     }
 
     render() {
@@ -97,8 +95,8 @@ export default class Checkout extends Component {
                                                     return (
                                                         <tr key={historyItem.id}>
                                                             <td>{historyItem.name}</td>
-                                                            <td className="text-center">{moment(historyItem.date.split('T', 1), 'YYYY-MM-DD').format('MM-DD-YYYY')}</td>
-                                                            <td className="text-right py-0">{historyItem.device}</td>
+                                                            <td className="text-center">{historyItem.date}</td>
+                                                            <td className="text-right">{historyItem.device}</td>
                                                         </tr>
                                                     );
                                                 })}
