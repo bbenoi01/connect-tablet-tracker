@@ -1,1 +1,16 @@
-{}
+{
+    "db": {
+      "name": "db",
+      "connector": "memory"
+    },
+    "MongoDB": {
+      "host": "",
+      "port": 0,
+      "url": "",
+      "database": "",
+      "password": "5h60ur9un6aa4b5ni65t4hm3of",
+      "name": "MongoDB",
+      "user": "heroku_1nt5jsmt",
+      "connector": "mongodb"
+    }
+  }
