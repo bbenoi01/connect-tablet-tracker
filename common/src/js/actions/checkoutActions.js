@@ -8,7 +8,7 @@ export const types = {
 
 export function findHistoryItems() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/historyItems')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/historyItems')
         .then(res => {
             dispatch({
                 type: types.ALL_HISTORY_ITEMS,
@@ -35,7 +35,7 @@ export function updateDeviceSelect(value) {
 
 export function addNewHistoryItem(name, device, date) {
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/historyItems', { name, device, date })
+        axios.post('https://connect-tablet-tracker.herokuapp.com/api/historyItems', { name, device, date })
         .then(res => {
             dispatch(findHistoryItems())
         })
