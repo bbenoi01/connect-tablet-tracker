@@ -13,7 +13,24 @@ export default function CheckoutReducer(state = INITIAL_STATE, action) {
     var month = nd.getMonth() + 1;
     var day = nd.getDate();
     var year = nd.getFullYear();
+    var hrs = nd.getHours();
+    var min = nd.getMinutes();
+    var sec = nd.getSeconds();
     var date = month + '/' + day + '/' + year;
+
+    if (hrs < 10) {
+        hrs = '0' + hrs;
+    }
+
+    if (min < 10) {
+        min = '0' + min;
+    }
+
+    if (sec < 10) {
+        sec = '0' + sec;
+    }
+
+    var time = hrs + ':' + min + ':' + sec;
 
     switch (type) {
         case (types.UPDATE_WHO): {
@@ -27,7 +44,8 @@ export default function CheckoutReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 device: payload,
-                date: date
+                date: date,
+                time: time
             }
         }
 
