@@ -8,7 +8,8 @@ function mapStoreToProps(store) {
         historyItems: store.app.historyItems,
         name: store.checkout.name,
         device: store.checkout.device,
-        date: store.checkout.date
+        date: store.checkout.date,
+        time: store.checkout.time
     }
 }
 
