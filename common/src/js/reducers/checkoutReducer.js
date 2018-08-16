@@ -30,7 +30,7 @@ export default function CheckoutReducer(state = INITIAL_STATE, action) {
         sec = '0' + sec;
     }
 
-    var time = hrs + ':' + min + ':' + sec;
+    var time = hrs + ':' + min;
 
     switch (type) {
         case (types.UPDATE_WHO): {
