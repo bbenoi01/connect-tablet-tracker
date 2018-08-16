@@ -30,8 +30,8 @@ export default class Checkout extends Component {
     }
 
     handleClick(e) {
-        const { dispatch, name, device, date } = this.props;
-        dispatch(addNewHistoryItem(name, device, date));
+        const { dispatch, name, device, date, time } = this.props;
+        dispatch(addNewHistoryItem(name, device, date, time));
     }
 
     render() {
