@@ -33,9 +33,9 @@ export function updateDeviceSelect(value) {
     };
 }
 
-export function addNewHistoryItem(name, device, date) {
+export function addNewHistoryItem(name, device, date, time) {
     return (dispatch) => {
-        axios.post('https://connect-tablet-tracker.herokuapp.com/api/historyItems', { name, device, date })
+        axios.post('https://connect-tablet-tracker.herokuapp.com/api/historyItems', { name, device, date, time })
         .then(res => {
             dispatch(findHistoryItems())
         })
