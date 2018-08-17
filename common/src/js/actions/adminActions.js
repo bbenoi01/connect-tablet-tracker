@@ -13,7 +13,7 @@ export const types = {
 
 export function findEmployees() {
     return (dispatch) => {
-        axios.get('https://connect-tablet-tracker.herokuapp.com/api/employees')
+        axios.get('http://localhost:3000/api/employees')
         .then(res => {
             dispatch({
                 type: types.ALL_EMPLOYEES,
@@ -40,17 +40,17 @@ export function updateLastName(value) {
 
 export function addEmployee(firstName, lastName) {
     return (dispatch) => {
-        axios.post('https://connect-tablet-tracker.herokuapp.com/api/employees', { firstName, lastName })
+        axios.post('http://localhost:3000/api/employees', { firstName, lastName })
         .then(res => {
             dispatch(findEmployees())
         })
-        .catch(err => alert('Error, employee not added'))     
+        .catch(err => alert('Error, employee not added'))
     }
 }
 
 export function removeEmployee(id) {
     return (dispatch) => {
-        axios.delete(`https://connect-tablet-tracker.herokuapp.com/api/employees/${id}`)
+        axios.delete(`http://localhost:3000/api/employees/${id}`)
         .then(res => {
             dispatch(findEmployees())
         })
@@ -60,7 +60,7 @@ export function removeEmployee(id) {
 
 export function findDevices() {
     return (dispatch) => {
-        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
+        axios.get('http://localhost:3000/api/devices')
         .then(res => {
             dispatch({
                 type: types.ALL_DEVICES,
@@ -87,7 +87,7 @@ export function updateModel(value) {
 
 export function addDevice(OS, model) {
     return (dispatch) => {
-        axios.post('https://connect-tablet-tracker.herokuapp.com/api/devices', { OS, model })
+        axios.post('http://localhost:3000/api/devices', { OS, model })
         .then(res => {
             dispatch(findDevices())
         })
@@ -97,7 +97,7 @@ export function addDevice(OS, model) {
 
 export function removeDevice(id) {
     return (dispatch) => {
-        axios.delete(`https://connect-tablet-tracker.herokuapp.com/api/devices/${id}`)
+        axios.delete(`http://localhost:3000/api/devices/${id}`)
         .then(res => {
             dispatch(findDevices())
         })
