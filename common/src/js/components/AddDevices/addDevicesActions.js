@@ -9,7 +9,7 @@ export const types = {
 
 export function findDevices() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/devices')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
         .then(res => {
             dispatch({
                 type: types.ALL_DEVICES,
@@ -36,7 +36,7 @@ export function updateModel(value) {
 
 export function addDevice(OS, model) {
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/devices', { OS, model })
+        axios.post('https://connect-tablet-tracker.herokuapp.com/api/devices', { OS, model })
         .then(res => {
             dispatch(findDevices())
         })

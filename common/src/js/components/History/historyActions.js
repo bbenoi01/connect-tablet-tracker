@@ -7,7 +7,7 @@ export const types = {
 export function addNewHistoryItem(name, device) {
     return {
         type: types.ADD_NEW_HISTORY_ITEM,
-        payload: axios.post('http://localhost:3000/api/historyItems', { name, device })
+        payload: axios.post('https://connect-tablet-tracker.herokuapp.com/api/historyItems', { name, device })
                     .then(res => {
                         dispatch(findHistoryItems())
                     })

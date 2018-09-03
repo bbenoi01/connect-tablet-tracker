@@ -7,7 +7,7 @@ export const types = {
 
 export function findEmployees() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/employees')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/employees')
         .then(res => {
             dispatch({
                 type: types.ALL_EMPLOYEES,
@@ -20,7 +20,7 @@ export function findEmployees() {
 
 export function findDevices() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/devices')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
         .then(res => {
             dispatch({
                 type: types.ALL_DEVICES,

@@ -6,7 +6,7 @@ export const types = {
 
 export function findDevices() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/devices')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
         .then(res => {
             dispatch({
                 type: types.ALL_DEVICES,
@@ -19,7 +19,7 @@ export function findDevices() {
 
 export function removeDevice(id) {
     return (dispatch) => {
-        axios.delete(`http://localhost:3000/api/devices/${id}`)
+        axios.delete(`https://connect-tablet-tracker.herokuapp.com/api/devices/${id}`)
         .then(res => {
             dispatch(findDevices())
         })
