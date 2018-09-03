@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 export const types = {
-    UPDATE_WHO: 'UPDATE_WHO',
-    UPDATE_WHAT: 'UPDATE_WHAT',
-    ADD_HISTORY_ITEM: 'ADD_HISTORY_ITEM'
+    ALL_HISTORY_ITEMS: 'ALL_HISTORY_ITEMS',
+    ALL_EMPLOYEES: 'ALL_EMPLOYEES',
+    ALL_DEVICES: 'ALL_DEVICES',
+    ADD_NEW_HISTORY_ITEM: 'ADD_NEW_HISTORY_ITEM'
 }
 
 export function findHistoryItems() {
@@ -19,23 +20,35 @@ export function findHistoryItems() {
     };
 }
 
-export function updateEmployeeSelect(value) {
-    return {
-        type: types.UPDATE_WHO,
-        payload: value
-    };
-}
-
-export function updateDeviceSelect(value) {
-    return {
-        type: types.UPDATE_WHAT,
-        payload: value
-    };
-}
-
-export function addNewHistoryItem(name, device, date, time) {
+export function findEmployees() {
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/historyItems', { name, device, date, time })
+        axios.get('http://localhost:3000/api/employees')
+        .then(res => {
+            dispatch({
+                type: types.ALL_EMPLOYEES,
+                payload: res.data
+            })      
+        })
+        .catch(err => alert('Error, employees not found'))    
+    };
+}
+
+export function findDevices() {
+    return (dispatch) => {
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
+        .then(res => {
+            dispatch({
+                type: types.ALL_DEVICES,
+                payload: res.data
+            })
+        })
+        .catch(err => alert('Error, devices not found'))
+    };
+}
+
+export function addNewHistoryItem(name, device, date, time, timestamp) {
+    return (dispatch) => {
+        axios.post('http://localhost:3000/api/historyItems', { name, device, date, time, timestamp })
         .then(res => {
             dispatch(findHistoryItems())
         })

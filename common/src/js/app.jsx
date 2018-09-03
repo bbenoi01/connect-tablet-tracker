@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { 
-    findDevices,
-    findEmployees,
-    findHistoryItems
-} from './actions/appActions';
-import Admin from './indexes/adminIndex';
-import Checkout from './indexes/checkoutIndex';
-// import History from './indexes/historyIndex';
+import Checkout from './containers/Checkout';
+import Admin from './containers/Admin';
 
 export default class App extends Component {
 
-
-    componentWillMount() {
-        const { dispatch } = this.props;
-        dispatch(findHistoryItems());
-        dispatch(findEmployees());
-        dispatch(findDevices());
-    }
 
     render() {
         return (

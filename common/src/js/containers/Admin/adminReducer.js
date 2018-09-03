@@ -1,20 +1,14 @@
-import { types } from '../actions/appActions';
+import { types } from './adminActions';
 
 const INITIAL_STATE = {
-    historyItems: [],
     employees: [],
     devices: []
 };
 
-export default function AppReducer(state = INITIAL_STATE, action) {
+export default function AdminReducer(state = INITIAL_STATE, action) {
     const { type, payload } = action;
+
     switch (type) {
-        case (types.ALL_HISTORY_ITEMS): {
-            return {
-                ...state,
-                historyItems: payload
-            };
-        }
 
         case (types.ALL_EMPLOYEES): {
             return {
@@ -27,9 +21,8 @@ export default function AppReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 devices: payload
-            };
+            }
         }
-        
         default: return state;
     }
 };
