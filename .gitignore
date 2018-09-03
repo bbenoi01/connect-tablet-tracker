@@ -19,6 +19,3 @@ node_modules
 npm-debug.log
 /dist
 package-lock.json
-adminActions.js
-appActions.js
-checkoutActions.js
