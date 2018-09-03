@@ -1,14 +1,20 @@
 import { combineReducers } from 'redux';
-import AppReducer from './reducers/appReducer';
-import AdminReducer from './reducers/adminReducer';
-import HistoryReducer from './reducers/historyReducer';
-import CheckoutReducer from './reducers/checkoutReducer';
+import CheckoutReducer from './containers/Checkout/checkoutReducer';
+import AdminReducer from './containers/Admin/adminReducer';
+import AddDeviceReducer from './components/AddDevices/addDevicesReducer';
+import AddRepsReducer from './components/AddReps/addRepsReducer';
+import HistoryReducer from './components/History/historyReducer';
+import WhatReducer from './components/What/whatReducer';
+import WhoReducer from './components/Who/whoReducer';
 
 const rootReducer = combineReducers({
-    app: AppReducer,
+    checkout: CheckoutReducer,
     admin: AdminReducer,
+    addDevice: AddDeviceReducer,
+    addReps: AddRepsReducer,
     history: HistoryReducer,
-    checkout: CheckoutReducer
+    what: WhatReducer,
+    who: WhoReducer
 });
 
 export default rootReducer;

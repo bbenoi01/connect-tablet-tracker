@@ -1,13 +1,11 @@
-import { types } from '../actions/checkoutActions';
+import { types } from './whatActions';
 
 const INITIAL_STATE = {
-    name: '',
     device: ''
 };
 
-export default function CheckoutReducer(state = INITIAL_STATE, action) {
+export default function WhatReducer(state = INITIAL_STATE, action) {
     const { type, payload } = action;
-
     var timestamp = Date.now();
     var nd = new Date(timestamp);
     var month = nd.getMonth() + 1;
@@ -33,30 +31,15 @@ export default function CheckoutReducer(state = INITIAL_STATE, action) {
     var time = hrs + ':' + min;
 
     switch (type) {
-        case (types.UPDATE_WHO): {
-            return {
-                ...state,
-                name: payload
-            }
-        }
-
         case (types.UPDATE_WHAT): {
             return {
                 ...state,
                 device: payload,
+                timestamp: timestamp,
                 date: date,
                 time: time
             }
         }
-
-        case (types.ADD_HISTORY_ITEM): {
-            return {
-                ...state,
-                name: payload.name,
-                device: payload.device
-            }
-        }
         default: return state;
     }
-
 };

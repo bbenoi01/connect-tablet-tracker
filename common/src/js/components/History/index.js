@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import History from '../components/history';
+import History from './History';
 
 function mapStoreToProps(store) {
     return {
-        historyItems: store.app.historyItems
+        historyItems: store.checkout.historyItems
     };
 }
 
