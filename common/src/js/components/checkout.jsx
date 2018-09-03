@@ -95,6 +95,7 @@ export default class Checkout extends Component {
                                                         <tr key={historyItem.id}>
                                                             <td>{historyItem.name}</td>
                                                             <td className="text-center">{historyItem.date} <t style={{fontSize: 'smaller'}}>{historyItem.time}</t></td>
+                                                            {/* <td className="text-center" style={{fontSize: 'smaller'}}> {historyItem.time}</td> */}
                                                             <td className="text-right">{historyItem.device}</td>
                                                         </tr>
                                                     );
