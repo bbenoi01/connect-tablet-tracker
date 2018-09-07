@@ -35,7 +35,7 @@ export function findEmployees() {
 
 export function findDevices() {
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/devices')
+        axios.get('https://connect-tablet-tracker.herokuapp.com/api/devices')
         .then(res => {
             dispatch({
                 type: types.ALL_DEVICES,
