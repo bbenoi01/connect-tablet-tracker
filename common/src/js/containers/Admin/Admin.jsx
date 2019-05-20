@@ -23,14 +23,16 @@ export default class Admin extends Component {
             <div>
                 <Navbar />
                 <br/>
-                <div className="row">
-                    <Reps />
-                    <AddReps />
-                </div>
-                <br/>
-                <div className="row">
-                    <Devices />
-                    <AddDevices />
+                <div className="container">
+                    <div className="row">
+                        <Reps />
+                        <AddReps />
+                    </div>
+                    <br/>
+                    <div className="row">
+                        <Devices />
+                        <AddDevices />
+                    </div>
                 </div>
             </div>
         );
