@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+    removeDevice
+} from './deviceActions';
 
 export default class Devices extends Component {
     constructor(props) {
